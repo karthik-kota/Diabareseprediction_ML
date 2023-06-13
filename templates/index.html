@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e8f7f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+    }
+
+    .option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 140px;
+      height: 140px;
+      background-color: #53b6a7;
+      border-radius: 50%;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .option:hover {
+      background-color: #1b9c8e;
+    }
+
+    .option-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Health App</h1>
+    <div class="options">
+      <a class="option" href="/predict">
+        <span class="option-icon">&#9873;</span>
+        Predict Diabetes
+      </a>
+      <a class="option" href="/show-patient">
+        <span class="option-icon">&#128101;</span>
+        Show Patients
+      </a>
+    </div>
+  </div>
+</body>
+</html>
