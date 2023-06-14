@@ -26,7 +26,7 @@ def predict():
             model = pickle.load(file)
         result = model.predict([data])
         print(result)
-        if result[0]==0:
+        if result[0] == 0:
             outcome = 'No Diabetics'
         else:
             outcome = 'Diabetic Patient'
@@ -37,5 +37,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 5000, debug = True)
+    app.run()
 
