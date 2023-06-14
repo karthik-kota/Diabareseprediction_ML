@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insert Patient</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f7f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        form {
+            width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #53b6a7;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1b9c8e;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Insert Patient</h1>
+    <form method="POST" action="/insert-patient">
+        <div class="form-group">
+            <label for="Patient_Name">Patient Name:</label>
+            <input type="text" id="Patient_Name" name="Patient_Name" required>
+        </div>
+        <div class="form-group">
+            <label for="Patient_Age">Patient Age:</label>
+            <input type="text" id="Patient_Age" name="Patient_Age" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Result_diabetic">Result Diabetic:</label>
+            <select id="Result_diabetic" name="Result_diabetic" required>
+                <option value="Positive">Positive</option>
+                <option value="Negative">Negative</option>
+            </select>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

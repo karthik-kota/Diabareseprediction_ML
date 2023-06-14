@@ -53,20 +53,21 @@ def patient_show():
     print(data)
     return render_template('showpatient.html',data = data)
 #===========================================================================
-# @app.route("/add-patient",methods=['GET','POST'])
-# def addpatient():
-#     if request.method=='POST':
-#         conn = sqlite3.connect('patient.db')
-#         cur = conn.cursor()
-#         customername=request.form.get('Patient_Name')
-#         customeraddr=request.form.get('')
-#         customeremail=request.form.get('email')
-#         cur.execute(f"insert into customer(customer_name,customer_addr,customer_email) values('{customername}','{customeraddr}','{customeremail}')")
-#         conn.commit()
-#         print('Data as been Inserted')
-#         return jsonify({'message':'sucessfull'})
-#     else:
-#         return render_template('addcustomer.html')
+@app.route("/insert-patient",methods=['GET','POST'])
+def addpatient():
+    if request.method=='POST':
+        conn = sqlite3.connect('patient.db')
+        cur = conn.cursor()
+        Patient_Name=request.form.get('Patient_Name')
+        Patient_Age=request.form.get('Patient_Age')
+        gender=request.form.get('gender')
+        Result_diabetic=request.form.get('Result_diabetic')
+        cur.execute(f"insert into PATIENT_DETAILS(PATIENT_NAME,PATIENT_AGE,GENDER,DIABETIC) values('{Patient_Name}',{Patient_Age},'{gender}','{Result_diabetic}')")
+        conn.commit()
+        print('Data as been Inserted')
+        return jsonify({'message':'sucessfull'})
+    else:
+        return render_template('insert_patient.html')
 
 
 if __name__ == '__main__':

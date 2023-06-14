@@ -26,8 +26,10 @@
 
     .options {
       display: flex;
-      justify-content: space-between;
-      width: 300px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 80%;
+      max-width: 600px;
     }
 
     .option {
@@ -41,6 +43,7 @@
       border-radius: 50%;
       color: #fff;
       text-decoration: none;
+      margin: 10px;
       transition: background-color 0.3s ease;
     }
 
@@ -65,6 +68,10 @@
       <a class="option" href="/show-patient">
         <span class="option-icon">&#128101;</span>
         Show Patients
+      </a>
+      <a class="option" href="/insert-patient">
+        <span class="option-icon">&#128101;</span>
+        Insert Patients
       </a>
     </div>
   </div>
