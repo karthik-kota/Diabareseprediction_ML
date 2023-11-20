@@ -1,14 +1,16 @@
+#Import necessary libraries
 from flask import Flask, jsonify, request, render_template
 import sqlite3
 import pickle
 
+#initialization of flask library
 app = Flask(__name__)
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
-
+#=========================================Prediction Function==============
 @app.route('/predict', methods=['GET','POST'])
 def predict():
     if request.method=='POST':
@@ -34,7 +36,7 @@ def predict():
         return jsonify({'message':outcome})
     else:
         return render_template('predict.html')
-#=========================================show patient==============
+#=========================================show patient Function==============
 
 @app.route("/show-patient", methods=['GET','POST'])
 def patient_show():
@@ -52,7 +54,7 @@ def patient_show():
         data.append(patient)
     print(data)
     return render_template('showpatient.html',data = data)
-#===========================================================================
+#==========================================Insert Function=================================
 @app.route("/insert-patient",methods=['GET','POST'])
 def addpatient():
     if request.method=='POST':
